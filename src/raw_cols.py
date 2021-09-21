@@ -1,5 +1,16 @@
 from colassigner import ColAccessor
 
 
-class CommonCols(ColAccessor):
-    obj_id = "object_id"
+class Loc(ColAccessor):
+    lon = "lon"
+    lat = "lat"
+
+
+class PingCols(ColAccessor):
+    devide_id = "device_id"
+    datetime = "datetime"
+    month = "month"
+    dayofmonth = "dayofmonth"
+
+    class Location(Loc):
+        pass

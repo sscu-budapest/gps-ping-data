@@ -1,3 +1,7 @@
 from sscutils import create_trepo_with_subsets
 
-objects_table = create_trepo_with_subsets("objects")
+from .raw_cols import PingCols
+
+pings_table = create_trepo_with_subsets(
+    "pings", group_cols=[PingCols.month, PingCols.dayofmonth], max_records=2_000_000
+)
