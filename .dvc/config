@@ -1,0 +1,6 @@
+[core]
+    remote = internal-ssh
+['remote "public-s3"']
+    url = s3://sscu-budapest-public
+['remote "internal-ssh"']
+    url = ssh://euryserver/homeEury/Bigdata/dvc-remote
