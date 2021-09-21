@@ -19,7 +19,7 @@ def create_subsets(subset_name, is_covid: bool = False, ind_of_weekday: int = No
     full_filter = (
         week_filter
         if ind_of_weekday is None
-        else (week_filter & ddf.loc[:, PingCols.datetime].dt.dayofweek == ind_of_weekday)
+        else (week_filter & (ddf.loc[:, PingCols.datetime].dt.dayofweek == ind_of_weekday))
     )
     filtered_ddf = ddf.loc[full_filter, :]
 
