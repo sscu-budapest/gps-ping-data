@@ -1,0 +1,5 @@
+outs:
+- md5: 03819f233e54179e97570fe64b304937.dir
+  size: 83021038
+  nfiles: 3
+  path: covid_sunday
