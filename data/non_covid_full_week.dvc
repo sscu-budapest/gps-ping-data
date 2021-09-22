@@ -1,0 +1,5 @@
+outs:
+- md5: eab32b6912496efffa4dedbc39ceb2fe.dir
+  size: 613543266
+  nfiles: 21
+  path: non_covid_full_week
