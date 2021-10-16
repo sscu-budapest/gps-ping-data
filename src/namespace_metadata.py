@@ -1,7 +1,8 @@
 from sscutils import ScruTable, TableFeaturesBase
 
 
-class RecordsFeatures(TableFeaturesBase):
+class RecordFeatures(TableFeaturesBase):
     pass
 
-records_table = ScruTable(...)
+
+records_table = ScruTable(RecordFeatures)
