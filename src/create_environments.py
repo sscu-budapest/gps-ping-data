@@ -1,6 +1,6 @@
 from sscutils import dump_dfs_to_tables
 
-from .namespace_metadata import records_table
+from . import namespace_metadata as ns
 
 
 def create_environments(env_name, **kwargs):
