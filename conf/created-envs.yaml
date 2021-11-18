@@ -1,2 +1,82 @@
 complete:
   branch: main
+covid_friday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 4
+    is_covid: true
+covid_full_week:
+  branch: main
+  kwargs:
+    ind_of_weekday: null
+    is_covid: true
+covid_monday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 0
+    is_covid: true
+covid_saturday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 5
+    is_covid: true
+covid_sunday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 6
+    is_covid: true
+covid_thursday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 3
+    is_covid: true
+covid_tuesday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 1
+    is_covid: true
+covid_wednesday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 2
+    is_covid: true
+non_covid_friday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 4
+    is_covid: false
+non_covid_full_week:
+  branch: main
+  kwargs:
+    ind_of_weekday: null
+    is_covid: false
+non_covid_monday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 0
+    is_covid: false
+non_covid_saturday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 5
+    is_covid: false
+non_covid_sunday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 6
+    is_covid: false
+non_covid_thursday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 3
+    is_covid: false
+non_covid_tuesday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 1
+    is_covid: false
+non_covid_wednesday:
+  branch: main
+  kwargs:
+    ind_of_weekday: 2
+    is_covid: false
