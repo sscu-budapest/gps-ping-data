@@ -5,13 +5,13 @@ ping:
     dtype: str
   - name: datetime
     dtype: datetime
-  - name: month
+  - name: year_month
     dtype: str
   - name: dayofmonth
     dtype: str
   - prefix: loc
     dtype: Coordinates
   partitioning_cols:
-  - month
+  - year_month
   - dayofmonth
   partition_max_rows: 2000000
