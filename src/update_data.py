@@ -1,13 +1,29 @@
+from io import StringIO
+from itertools import islice
+
 import pandas as pd
 from colassigner.meta_base import get_all_cols
 
 from .namespace_metadata import PingFeatures, ping_table
 
 
-def update_data(data_path: str):
-    df = (
+def update_data(data_path: str, chunksize=1_000_000):
+
+    with open(data_path, "r") as fp:
+        while True:
+            data = [*islice(fp, chunksize)]
+            if not data:
+                break
+            sio = StringIO()
+            sio.writelines(data)
+            sio.seek(0)
+            dump_raw(sio)
+
+
+def dump_raw(raw_in):
+    (
         pd.read_csv(
-            data_path,
+            raw_in,
             sep="\t",
             header=None,
         )
@@ -20,6 +36,4 @@ def update_data(data_path: str):
             }
         )
         .loc[:, get_all_cols(PingFeatures)]
-    )
-
-    ping_table.replace_all(df)
+    ).pipe(ping_table.extend)
