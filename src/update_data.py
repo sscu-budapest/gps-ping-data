@@ -11,7 +11,7 @@ def update_data(data_path: str, chunksize=1_000_000):
 
     with open(data_path, "r") as fp:
         while True:
-            data = [*islice(fp, chunksize)]
+            data = [*islice(fp, int(chunksize))]
             if not data:
                 break
             sio = StringIO()
