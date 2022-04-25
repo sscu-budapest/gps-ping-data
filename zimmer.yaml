@@ -1,0 +1,47 @@
+name: gpsping
+version: v0.0
+envs:
+  complete:
+    params:
+      chunksize: 1000000
+  covid_full_week:
+    params:
+      ind_of_weekday: null
+      is_covid: true
+  covid_saturday:
+    params:
+      ind_of_weekday: 5
+      is_covid: true
+  covid_sunday:
+    params:
+      ind_of_weekday: 6
+      is_covid: true
+  covid_thursday:
+    params:
+      ind_of_weekday: 3
+      is_covid: true
+  covid_tuesday:
+    params:
+      ind_of_weekday: 1
+      is_covid: true
+  non_covid_full_week:
+    params:
+      ind_of_weekday: null
+      is_covid: false
+  non_covid_saturday:
+    params:
+      ind_of_weekday: 5
+      is_covid: false
+  non_covid_sunday:
+    params:
+      ind_of_weekday: 6
+      is_covid: false
+  non_covid_thursday:
+    params:
+      ind_of_weekday: 3
+      is_covid: false
+  non_covid_tuesday:
+    params:
+      ind_of_weekday: 1
+      is_covid: false
+
