@@ -1,0 +1,121 @@
+stages:
+  complete-ubermedia:
+    cmd: datazimmer run-step complete-ubermedia
+    deps:
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.complete.params.chunksize
+    outs:
+    - data/gpsping/ubermedia/complete:
+        persist: true
+  covid_full_week-ubermedia:
+    cmd: datazimmer run-step covid_full_week-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.covid_full_week.params.ind_of_weekday
+      - envs.covid_full_week.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/covid_full_week
+  covid_saturday-ubermedia:
+    cmd: datazimmer run-step covid_saturday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.covid_saturday.params.ind_of_weekday
+      - envs.covid_saturday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/covid_saturday
+  covid_sunday-ubermedia:
+    cmd: datazimmer run-step covid_sunday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.covid_sunday.params.ind_of_weekday
+      - envs.covid_sunday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/covid_sunday
+  covid_thursday-ubermedia:
+    cmd: datazimmer run-step covid_thursday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.covid_thursday.params.ind_of_weekday
+      - envs.covid_thursday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/covid_thursday
+  covid_tuesday-ubermedia:
+    cmd: datazimmer run-step covid_tuesday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.covid_tuesday.params.ind_of_weekday
+      - envs.covid_tuesday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/covid_tuesday
+  non_covid_full_week-ubermedia:
+    cmd: datazimmer run-step non_covid_full_week-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.non_covid_full_week.params.ind_of_weekday
+      - envs.non_covid_full_week.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/non_covid_full_week
+  non_covid_saturday-ubermedia:
+    cmd: datazimmer run-step non_covid_saturday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.non_covid_saturday.params.ind_of_weekday
+      - envs.non_covid_saturday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/non_covid_saturday
+  non_covid_sunday-ubermedia:
+    cmd: datazimmer run-step non_covid_sunday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.non_covid_sunday.params.ind_of_weekday
+      - envs.non_covid_sunday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/non_covid_sunday
+  non_covid_thursday-ubermedia:
+    cmd: datazimmer run-step non_covid_thursday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.non_covid_thursday.params.ind_of_weekday
+      - envs.non_covid_thursday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/non_covid_thursday
+  non_covid_tuesday-ubermedia:
+    cmd: datazimmer run-step non_covid_tuesday-ubermedia
+    deps:
+    - data/gpsping/ubermedia/complete
+    - src/ubermedia.py
+    params:
+    - zimmer.yaml:
+      - envs.non_covid_tuesday.params.ind_of_weekday
+      - envs.non_covid_tuesday.params.is_covid
+    outs:
+    - data/gpsping/ubermedia/non_covid_tuesday
