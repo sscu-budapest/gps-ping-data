@@ -16,7 +16,7 @@ class Coordinates(dz.CompositeTypeBase):
     lat = float
 
 
-class PingFeatures(dz.TableFeaturesBase):
+class GpsPing(dz.AbstractEntity):
 
     device_id = str
     datetime = dt.datetime
@@ -27,8 +27,8 @@ class PingFeatures(dz.TableFeaturesBase):
 
 
 ping_table = dz.ScruTable(
-    PingFeatures,
-    partitioning_cols=[PingFeatures.year_month, PingFeatures.dayofmonth],
+    GpsPing,
+    partitioning_cols=[GpsPing.year_month, GpsPing.dayofmonth],
     max_partition_size=2_000_000,
 )
 
@@ -54,9 +54,9 @@ def create_environments(is_covid: bool = False, ind_of_weekday: int = None):
 
     month = COVID_MONTH if is_covid else NON_COVID_MONTH
     ddf = dd.read_parquet([p for p in ping_table.trepo.paths if month in p])
-    weeks = ddf.loc[:, PingFeatures.datetime].dt.isocalendar().week
+    weeks = ddf.loc[:, GpsPing.datetime].dt.isocalendar().week
     week_filter = weeks == (weeks.min() + 1)
-    day_filter = ddf.loc[:, PingFeatures.datetime].dt.dayofweek == ind_of_weekday
+    day_filter = ddf.loc[:, GpsPing.datetime].dt.dayofweek == ind_of_weekday
     full_filter = week_filter if ind_of_weekday is None else (week_filter & day_filter)
     filtered_ddf = ddf.loc[full_filter, :]
     ping_table.replace_all(filtered_ddf)
@@ -64,22 +64,22 @@ def create_environments(is_covid: bool = False, ind_of_weekday: int = None):
 
 def dump_raw(raw_in):
     csv_cols = {
-        1: PingFeatures.device_id,
-        2: PingFeatures.loc.lat,
-        3: PingFeatures.loc.lon,
+        1: GpsPing.device_id,
+        2: GpsPing.loc.lat,
+        3: GpsPing.loc.lon,
     }
     ping_table.extend(
         pd.read_csv(raw_in, sep="\t", header=None)
         .rename(columns=csv_cols)
         .assign(
             **{
-                PingFeatures.datetime: lambda df: pd.to_datetime(
+                GpsPing.datetime: lambda df: pd.to_datetime(
                     df.iloc[:, 4] * 10 ** 9
                 ),
-                PingFeatures.dayofmonth: lambda df: df[PingFeatures.datetime]
+                GpsPing.dayofmonth: lambda df: df[GpsPing.datetime]
                 .dt.day.astype(str)
                 .str.zfill(2),
-                PingFeatures.year_month: lambda df: df.loc[:, 5].str[:7],
+                GpsPing.year_month: lambda df: df.loc[:, 5].str[:7],
             }
         )
     )
