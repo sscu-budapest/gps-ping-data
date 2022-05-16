@@ -3,7 +3,7 @@ version: v0.1
 envs:
   complete:
     params:
-      chunksize: 1000000
+      chunksize: 10000000
   covid_full_week:
     params:
       ind_of_weekday: null
