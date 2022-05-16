@@ -53,7 +53,7 @@ def create_environments(is_covid: bool = False, ind_of_weekday: int = None):
     """create environments that are described in the config of the repo"""
 
     month = COVID_MONTH if is_covid else NON_COVID_MONTH
-    ddf = dd.read_parquet([p for p in ping_table.trepo.paths if month in p])
+    ddf = dd.read_parquet([p for p in ping_table.paths if month in p])
     weeks = ddf.loc[:, GpsPing.datetime].dt.isocalendar().week
     week_filter = weeks == (weeks.min() + 1)
     day_filter = ddf.loc[:, GpsPing.datetime].dt.dayofweek == ind_of_weekday
