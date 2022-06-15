@@ -1,7 +1,7 @@
 import datetime as dt
+import os
 from io import StringIO
 from itertools import islice
-import os
 
 import dask.dataframe as dd
 import datazimmer as dz
@@ -20,26 +20,27 @@ class GpsPing(dz.AbstractEntity):
 
     device_id = str
     datetime = dt.datetime
-    year_month = str
-    dayofmonth = str
-
     loc = Coordinates
 
 
+class ExtendedPing(GpsPing):
+    device_group = str
+    year_month = str
+
+
 ping_table = dz.ScruTable(
-    GpsPing,
-    partitioning_cols=[GpsPing.year_month, GpsPing.dayofmonth],
-    max_partition_size=2_000_000,
+    ExtendedPing,
+    partitioning_cols=[ExtendedPing.year_month, ExtendedPing.device_group],
 )
 
 
 @dz.register_data_loader
-def update_data(chunksize=1_000_000):
+def update_data(chunksize_mil):
 
-    data_path = os.environ["RAW_GPS_PING_LOC"]
+    data_path = os.environ["RAW_UM_GPS_PING_LOC"]
     with open(data_path, "r") as fp:
         while True:
-            data = [*islice(fp, int(chunksize))]
+            data = [*islice(fp, int(chunksize_mil * 10**6))]
             if not data:
                 break
             sio = StringIO()
@@ -73,13 +74,9 @@ def dump_raw(raw_in):
         .rename(columns=csv_cols)
         .assign(
             **{
-                GpsPing.datetime: lambda df: pd.to_datetime(
-                    df.iloc[:, 4] * 10 ** 9
-                ),
-                GpsPing.dayofmonth: lambda df: df[GpsPing.datetime]
-                .dt.day.astype(str)
-                .str.zfill(2),
-                GpsPing.year_month: lambda df: df.loc[:, 5].str[:7],
+                GpsPing.datetime: lambda df: pd.to_datetime(df.iloc[:, 4] * 10**9),
+                ExtendedPing.device_group: lambda df: df[GpsPing.device_id].str[:2],
+                ExtendedPing.year_month: lambda df: df.loc[:, 5].str[:7],
             }
         )
     )

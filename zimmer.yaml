@@ -1,9 +1,9 @@
 name: gpsping
-version: v0.1
+version: v0.2
 envs:
   complete:
     params:
-      chunksize: 10000000
+      chunksize_mil: 20
   covid_full_week:
     params:
       ind_of_weekday: null
