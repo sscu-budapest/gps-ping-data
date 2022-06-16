@@ -1,16 +1,16 @@
 stages:
   complete-ubermedia:
-    cmd: datazimmer run-step complete-ubermedia
+    cmd: dz run-step complete-ubermedia
     deps:
     - src/ubermedia.py
     params:
     - zimmer.yaml:
-      - envs.complete.params.chunksize
+      - envs.complete.params.chunksize_mil
     outs:
     - data/gpsping/ubermedia/complete:
         persist: true
   covid_full_week-ubermedia:
-    cmd: datazimmer run-step covid_full_week-ubermedia
+    cmd: dz run-step covid_full_week-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -21,7 +21,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_full_week
   covid_saturday-ubermedia:
-    cmd: datazimmer run-step covid_saturday-ubermedia
+    cmd: dz run-step covid_saturday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -32,7 +32,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_saturday
   covid_sunday-ubermedia:
-    cmd: datazimmer run-step covid_sunday-ubermedia
+    cmd: dz run-step covid_sunday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -43,7 +43,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_sunday
   covid_thursday-ubermedia:
-    cmd: datazimmer run-step covid_thursday-ubermedia
+    cmd: dz run-step covid_thursday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -54,7 +54,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_thursday
   covid_tuesday-ubermedia:
-    cmd: datazimmer run-step covid_tuesday-ubermedia
+    cmd: dz run-step covid_tuesday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -65,7 +65,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_tuesday
   non_covid_full_week-ubermedia:
-    cmd: datazimmer run-step non_covid_full_week-ubermedia
+    cmd: dz run-step non_covid_full_week-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -76,7 +76,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_full_week
   non_covid_saturday-ubermedia:
-    cmd: datazimmer run-step non_covid_saturday-ubermedia
+    cmd: dz run-step non_covid_saturday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -87,7 +87,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_saturday
   non_covid_sunday-ubermedia:
-    cmd: datazimmer run-step non_covid_sunday-ubermedia
+    cmd: dz run-step non_covid_sunday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -98,7 +98,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_sunday
   non_covid_thursday-ubermedia:
-    cmd: datazimmer run-step non_covid_thursday-ubermedia
+    cmd: dz run-step non_covid_thursday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
@@ -109,7 +109,7 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_thursday
   non_covid_tuesday-ubermedia:
-    cmd: datazimmer run-step non_covid_tuesday-ubermedia
+    cmd: dz run-step non_covid_tuesday-ubermedia
     deps:
     - data/gpsping/ubermedia/complete
     - src/ubermedia.py
