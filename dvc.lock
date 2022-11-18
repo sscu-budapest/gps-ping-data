@@ -1,206 +1,206 @@
 schema: '2.0'
 stages:
   complete-ubermedia:
-    cmd: dz run-step complete-ubermedia
+    cmd: dz run-step ubermedia complete
     deps:
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+    - path: src/ubermedia/raw_proc.py
+      md5: 60813d39c1884ac24ec46c6cb2188fc8
+      size: 865
     params:
       zimmer.yaml:
-        envs.complete.params.chunksize_mil: 20
+        envs.complete.params.chunksize_mil: 10
     outs:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
   non_covid_sunday-ubermedia:
-    cmd: dz run-step non_covid_sunday-ubermedia
+    cmd: dz run-step ubermedia non_covid_sunday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.non_covid_sunday.params.ind_of_weekday: 6
         envs.non_covid_sunday.params.is_covid: false
     outs:
     - path: data/gpsping/ubermedia/non_covid_sunday
-      md5: c56fbcf5155209c8b5cb28dc97f7dba0.dir
-      size: 113909716
+      md5: 527c1db721948a0140c23560542cf7da.dir
+      size: 113645525
       nfiles: 256
   covid_full_week-ubermedia:
-    cmd: dz run-step covid_full_week-ubermedia
+    cmd: dz run-step ubermedia covid_full_week
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.covid_full_week.params.ind_of_weekday:
         envs.covid_full_week.params.is_covid: true
     outs:
     - path: data/gpsping/ubermedia/covid_full_week
-      md5: 46ee12e0afff6452c3313f39f3eccac3.dir
-      size: 905402293
+      md5: 17b045bba553190cc90fe0935772a080.dir
+      size: 903345142
       nfiles: 256
   covid_saturday-ubermedia:
-    cmd: dz run-step covid_saturday-ubermedia
+    cmd: dz run-step ubermedia covid_saturday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.covid_saturday.params.ind_of_weekday: 5
         envs.covid_saturday.params.is_covid: true
     outs:
     - path: data/gpsping/ubermedia/covid_saturday
-      md5: 2da1e3d2eb49d08d979a1e1caff5e368.dir
-      size: 126994440
+      md5: 141b50c10fdce604d6cb23608f67fdad.dir
+      size: 126728928
       nfiles: 256
   non_covid_full_week-ubermedia:
-    cmd: dz run-step non_covid_full_week-ubermedia
+    cmd: dz run-step ubermedia non_covid_full_week
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.non_covid_full_week.params.ind_of_weekday:
         envs.non_covid_full_week.params.is_covid: false
     outs:
     - path: data/gpsping/ubermedia/non_covid_full_week
-      md5: 2e9e6ba39089107fbc2ba2fe6fbb2c67.dir
-      size: 797268317
+      md5: 69258a38c042171594b12fa7382b214f.dir
+      size: 796452067
       nfiles: 256
   non_covid_thursday-ubermedia:
-    cmd: dz run-step non_covid_thursday-ubermedia
+    cmd: dz run-step ubermedia non_covid_thursday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.non_covid_thursday.params.ind_of_weekday: 3
         envs.non_covid_thursday.params.is_covid: false
     outs:
     - path: data/gpsping/ubermedia/non_covid_thursday
-      md5: 4f23de578bd40597b2a34fc304634cba.dir
-      size: 116672674
+      md5: b5bba784f69ec73642f50ba76c11ed1f.dir
+      size: 116407471
       nfiles: 256
   non_covid_saturday-ubermedia:
-    cmd: dz run-step non_covid_saturday-ubermedia
+    cmd: dz run-step ubermedia non_covid_saturday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.non_covid_saturday.params.ind_of_weekday: 5
         envs.non_covid_saturday.params.is_covid: false
     outs:
     - path: data/gpsping/ubermedia/non_covid_saturday
-      md5: 37b47f51a10d6c73449ed1f95f308543.dir
-      size: 126583522
+      md5: c026749523cc8e71d88999453ef721c2.dir
+      size: 126318679
       nfiles: 256
   covid_sunday-ubermedia:
-    cmd: dz run-step covid_sunday-ubermedia
+    cmd: dz run-step ubermedia covid_sunday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.covid_sunday.params.ind_of_weekday: 6
         envs.covid_sunday.params.is_covid: true
     outs:
     - path: data/gpsping/ubermedia/covid_sunday
-      md5: 6fc954c470f9d62cc69d97acb23b1cc8.dir
-      size: 112407344
+      md5: 3becaa5575632f554906336c341becec.dir
+      size: 112142012
       nfiles: 256
   covid_thursday-ubermedia:
-    cmd: dz run-step covid_thursday-ubermedia
+    cmd: dz run-step ubermedia covid_thursday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.covid_thursday.params.ind_of_weekday: 3
         envs.covid_thursday.params.is_covid: true
     outs:
     - path: data/gpsping/ubermedia/covid_thursday
-      md5: 161b5f173cb2d6b5fae81aa977023309.dir
-      size: 138057793
+      md5: 35f338e3cfa48edda3174b491c6eb924.dir
+      size: 137791798
       nfiles: 256
   non_covid_tuesday-ubermedia:
-    cmd: dz run-step non_covid_tuesday-ubermedia
+    cmd: dz run-step ubermedia non_covid_tuesday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.non_covid_tuesday.params.ind_of_weekday: 1
         envs.non_covid_tuesday.params.is_covid: false
     outs:
     - path: data/gpsping/ubermedia/non_covid_tuesday
-      md5: f1fcbf20de93d3a071fd274132253465.dir
-      size: 110825870
+      md5: 9c06502eb08351f722661807752d655c.dir
+      size: 110562089
       nfiles: 256
   covid_tuesday-ubermedia:
-    cmd: dz run-step covid_tuesday-ubermedia
+    cmd: dz run-step ubermedia covid_tuesday
     deps:
     - path: data/gpsping/ubermedia/complete
-      md5: 2528403ed5077fe23b1a876d57ba10ad.dir
-      size: 74947155079
-      nfiles: 6400
-    - path: src/ubermedia.py
-      md5: b2c23439b435c2e64f6f77de5a5b88d9
-      size: 2191
+      md5: c67d7f475ba69db5796972bad4d346fb.dir
+      size: 74840147407
+      nfiles: 6144
+    - path: src/ubermedia/envs.py
+      md5: 5ff8956992c4f0e8377c87f2db4679db
+      size: 835
     params:
       zimmer.yaml:
         envs.covid_tuesday.params.ind_of_weekday: 1
         envs.covid_tuesday.params.is_covid: true
     outs:
     - path: data/gpsping/ubermedia/covid_tuesday
-      md5: 54997f536384d9fc7bc987de7294699f.dir
-      size: 136545228
+      md5: 99263569990351419fe5b9543ef2bc87.dir
+      size: 136279621
       nfiles: 256

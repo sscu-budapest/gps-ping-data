@@ -1,8 +1,8 @@
 stages:
   complete-ubermedia:
-    cmd: dz run-step complete-ubermedia
+    cmd: dz run-step ubermedia complete
     deps:
-    - src/ubermedia.py
+    - src/ubermedia/raw_proc.py
     params:
     - zimmer.yaml:
       - envs.complete.params.chunksize_mil
@@ -10,10 +10,10 @@ stages:
     - data/gpsping/ubermedia/complete:
         persist: true
   covid_full_week-ubermedia:
-    cmd: dz run-step covid_full_week-ubermedia
+    cmd: dz run-step ubermedia covid_full_week
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.covid_full_week.params.ind_of_weekday
@@ -21,10 +21,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_full_week
   covid_saturday-ubermedia:
-    cmd: dz run-step covid_saturday-ubermedia
+    cmd: dz run-step ubermedia covid_saturday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.covid_saturday.params.ind_of_weekday
@@ -32,10 +32,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_saturday
   covid_sunday-ubermedia:
-    cmd: dz run-step covid_sunday-ubermedia
+    cmd: dz run-step ubermedia covid_sunday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.covid_sunday.params.ind_of_weekday
@@ -43,10 +43,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_sunday
   covid_thursday-ubermedia:
-    cmd: dz run-step covid_thursday-ubermedia
+    cmd: dz run-step ubermedia covid_thursday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.covid_thursday.params.ind_of_weekday
@@ -54,10 +54,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_thursday
   covid_tuesday-ubermedia:
-    cmd: dz run-step covid_tuesday-ubermedia
+    cmd: dz run-step ubermedia covid_tuesday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.covid_tuesday.params.ind_of_weekday
@@ -65,10 +65,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/covid_tuesday
   non_covid_full_week-ubermedia:
-    cmd: dz run-step non_covid_full_week-ubermedia
+    cmd: dz run-step ubermedia non_covid_full_week
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.non_covid_full_week.params.ind_of_weekday
@@ -76,10 +76,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_full_week
   non_covid_saturday-ubermedia:
-    cmd: dz run-step non_covid_saturday-ubermedia
+    cmd: dz run-step ubermedia non_covid_saturday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.non_covid_saturday.params.ind_of_weekday
@@ -87,10 +87,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_saturday
   non_covid_sunday-ubermedia:
-    cmd: dz run-step non_covid_sunday-ubermedia
+    cmd: dz run-step ubermedia non_covid_sunday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.non_covid_sunday.params.ind_of_weekday
@@ -98,10 +98,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_sunday
   non_covid_thursday-ubermedia:
-    cmd: dz run-step non_covid_thursday-ubermedia
+    cmd: dz run-step ubermedia non_covid_thursday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.non_covid_thursday.params.ind_of_weekday
@@ -109,10 +109,10 @@ stages:
     outs:
     - data/gpsping/ubermedia/non_covid_thursday
   non_covid_tuesday-ubermedia:
-    cmd: dz run-step non_covid_tuesday-ubermedia
+    cmd: dz run-step ubermedia non_covid_tuesday
     deps:
     - data/gpsping/ubermedia/complete
-    - src/ubermedia.py
+    - src/ubermedia/envs.py
     params:
     - zimmer.yaml:
       - envs.non_covid_tuesday.params.ind_of_weekday
