@@ -119,3 +119,58 @@ stages:
       - envs.non_covid_tuesday.params.is_covid
     outs:
     - data/gpsping/ubermedia/non_covid_tuesday
+  complete-minor_report:
+    cmd: dz run-step minor_report complete
+    deps:
+    - data/gpsping/ubermedia/complete/extended_ping
+    - src/minor_report.py
+  covid_full_week-minor_report:
+    cmd: dz run-step minor_report covid_full_week
+    deps:
+    - data/gpsping/ubermedia/covid_full_week/extended_ping
+    - src/minor_report.py
+  covid_saturday-minor_report:
+    cmd: dz run-step minor_report covid_saturday
+    deps:
+    - data/gpsping/ubermedia/covid_saturday/extended_ping
+    - src/minor_report.py
+  covid_sunday-minor_report:
+    cmd: dz run-step minor_report covid_sunday
+    deps:
+    - data/gpsping/ubermedia/covid_sunday/extended_ping
+    - src/minor_report.py
+  covid_thursday-minor_report:
+    cmd: dz run-step minor_report covid_thursday
+    deps:
+    - data/gpsping/ubermedia/covid_thursday/extended_ping
+    - src/minor_report.py
+  covid_tuesday-minor_report:
+    cmd: dz run-step minor_report covid_tuesday
+    deps:
+    - data/gpsping/ubermedia/covid_tuesday/extended_ping
+    - src/minor_report.py
+  non_covid_full_week-minor_report:
+    cmd: dz run-step minor_report non_covid_full_week
+    deps:
+    - data/gpsping/ubermedia/non_covid_full_week/extended_ping
+    - src/minor_report.py
+  non_covid_saturday-minor_report:
+    cmd: dz run-step minor_report non_covid_saturday
+    deps:
+    - data/gpsping/ubermedia/non_covid_saturday/extended_ping
+    - src/minor_report.py
+  non_covid_sunday-minor_report:
+    cmd: dz run-step minor_report non_covid_sunday
+    deps:
+    - data/gpsping/ubermedia/non_covid_sunday/extended_ping
+    - src/minor_report.py
+  non_covid_thursday-minor_report:
+    cmd: dz run-step minor_report non_covid_thursday
+    deps:
+    - data/gpsping/ubermedia/non_covid_thursday/extended_ping
+    - src/minor_report.py
+  non_covid_tuesday-minor_report:
+    cmd: dz run-step minor_report non_covid_tuesday
+    deps:
+    - data/gpsping/ubermedia/non_covid_tuesday/extended_ping
+    - src/minor_report.py

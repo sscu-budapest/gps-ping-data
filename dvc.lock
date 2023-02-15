@@ -204,3 +204,113 @@ stages:
       md5: b730e31184a573748ea9e634ad6eb0e0.dir
       size: 136280133
       nfiles: 256
+  non_covid_saturday-minor_report:
+    cmd: dz run-step minor_report non_covid_saturday
+    deps:
+    - path: data/gpsping/ubermedia/non_covid_saturday/extended_ping
+      md5: 6149bc56ea7193fbbe54f2e2b1568b8e.dir
+      size: 126319191
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  covid_thursday-minor_report:
+    cmd: dz run-step minor_report covid_thursday
+    deps:
+    - path: data/gpsping/ubermedia/covid_thursday/extended_ping
+      md5: de855de159af1271880b217e9d2b065b.dir
+      size: 137792310
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  non_covid_full_week-minor_report:
+    cmd: dz run-step minor_report non_covid_full_week
+    deps:
+    - path: data/gpsping/ubermedia/non_covid_full_week/extended_ping
+      md5: c7e48602cdb6026db611480e7b8c5a76.dir
+      size: 796452579
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  non_covid_sunday-minor_report:
+    cmd: dz run-step minor_report non_covid_sunday
+    deps:
+    - path: data/gpsping/ubermedia/non_covid_sunday/extended_ping
+      md5: 20d2b77d760d1d40141ace87742852c8.dir
+      size: 113646037
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  complete-minor_report:
+    cmd: dz run-step minor_report complete
+    deps:
+    - path: data/gpsping/ubermedia/complete/extended_ping
+      md5: c85c45c2d43e5ef7d54642107c89536e.dir
+      size: 74840159695
+      nfiles: 6144
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  covid_tuesday-minor_report:
+    cmd: dz run-step minor_report covid_tuesday
+    deps:
+    - path: data/gpsping/ubermedia/covid_tuesday/extended_ping
+      md5: f9e5dc061adc355554b785153446f2a0.dir
+      size: 136280133
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  non_covid_thursday-minor_report:
+    cmd: dz run-step minor_report non_covid_thursday
+    deps:
+    - path: data/gpsping/ubermedia/non_covid_thursday/extended_ping
+      md5: 8474fad7ad17f957e9c68ff7538debad.dir
+      size: 116407983
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  covid_full_week-minor_report:
+    cmd: dz run-step minor_report covid_full_week
+    deps:
+    - path: data/gpsping/ubermedia/covid_full_week/extended_ping
+      md5: 325ea5ce5c2080d67c287b01e9e93331.dir
+      size: 903345654
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  covid_sunday-minor_report:
+    cmd: dz run-step minor_report covid_sunday
+    deps:
+    - path: data/gpsping/ubermedia/covid_sunday/extended_ping
+      md5: 819ca93215869d7f7b1df8362253997e.dir
+      size: 112142524
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  covid_saturday-minor_report:
+    cmd: dz run-step minor_report covid_saturday
+    deps:
+    - path: data/gpsping/ubermedia/covid_saturday/extended_ping
+      md5: c0f1827b862bec58196cabd59b1a9c7a.dir
+      size: 126729440
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876
+  non_covid_tuesday-minor_report:
+    cmd: dz run-step minor_report non_covid_tuesday
+    deps:
+    - path: data/gpsping/ubermedia/non_covid_tuesday/extended_ping
+      md5: 1b583f3e9fbf0d52c1667ab05381cd00.dir
+      size: 110562601
+      nfiles: 256
+    - path: src/minor_report.py
+      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
+      size: 876

@@ -1,5 +1,5 @@
 name: gpsping
-version: v0.3
+version: v0.4
 envs:
   complete:
     params:
@@ -44,4 +44,3 @@ envs:
     params:
       ind_of_weekday: 1
       is_covid: false
-
