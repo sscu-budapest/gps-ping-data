@@ -124,53 +124,75 @@ stages:
     deps:
     - data/gpsping/ubermedia/complete/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/complete/date_aggregation.parquet
   covid_full_week-minor_report:
     cmd: dz run-step minor_report covid_full_week
     deps:
     - data/gpsping/ubermedia/covid_full_week/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/covid_full_week/date_aggregation.parquet
   covid_saturday-minor_report:
     cmd: dz run-step minor_report covid_saturday
     deps:
     - data/gpsping/ubermedia/covid_saturday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/covid_saturday/date_aggregation.parquet
   covid_sunday-minor_report:
     cmd: dz run-step minor_report covid_sunday
     deps:
     - data/gpsping/ubermedia/covid_sunday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/covid_sunday/date_aggregation.parquet
   covid_thursday-minor_report:
     cmd: dz run-step minor_report covid_thursday
     deps:
     - data/gpsping/ubermedia/covid_thursday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/covid_thursday/date_aggregation.parquet
   covid_tuesday-minor_report:
     cmd: dz run-step minor_report covid_tuesday
     deps:
     - data/gpsping/ubermedia/covid_tuesday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/covid_tuesday/date_aggregation.parquet
   non_covid_full_week-minor_report:
     cmd: dz run-step minor_report non_covid_full_week
     deps:
     - data/gpsping/ubermedia/non_covid_full_week/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/non_covid_full_week/date_aggregation.parquet
   non_covid_saturday-minor_report:
     cmd: dz run-step minor_report non_covid_saturday
     deps:
     - data/gpsping/ubermedia/non_covid_saturday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/non_covid_saturday/date_aggregation.parquet
   non_covid_sunday-minor_report:
     cmd: dz run-step minor_report non_covid_sunday
     deps:
     - data/gpsping/ubermedia/non_covid_sunday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/non_covid_sunday/date_aggregation.parquet
   non_covid_thursday-minor_report:
     cmd: dz run-step minor_report non_covid_thursday
     deps:
     - data/gpsping/ubermedia/non_covid_thursday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/non_covid_thursday/date_aggregation.parquet
   non_covid_tuesday-minor_report:
     cmd: dz run-step minor_report non_covid_tuesday
     deps:
     - data/gpsping/ubermedia/non_covid_tuesday/extended_ping
     - src/minor_report.py
+    outs:
+    - data/gpsping/minor_report/non_covid_tuesday/date_aggregation.parquet

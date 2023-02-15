@@ -212,8 +212,12 @@ stages:
       size: 126319191
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/non_covid_saturday/date_aggregation.parquet
+      md5: 137a97ad03d561d74b3b96eeaed047c6
+      size: 2873
   covid_thursday-minor_report:
     cmd: dz run-step minor_report covid_thursday
     deps:
@@ -222,8 +226,12 @@ stages:
       size: 137792310
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/covid_thursday/date_aggregation.parquet
+      md5: c914d0be02f24e20d6c28400f3f8e58b
+      size: 2873
   non_covid_full_week-minor_report:
     cmd: dz run-step minor_report non_covid_full_week
     deps:
@@ -232,8 +240,12 @@ stages:
       size: 796452579
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/non_covid_full_week/date_aggregation.parquet
+      md5: 83a5fd1a0c11252272699baec41b4bb4
+      size: 2999
   non_covid_sunday-minor_report:
     cmd: dz run-step minor_report non_covid_sunday
     deps:
@@ -242,8 +254,12 @@ stages:
       size: 113646037
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/non_covid_sunday/date_aggregation.parquet
+      md5: 18104ace3f33b4a2495ed9b3555c3261
+      size: 2873
   complete-minor_report:
     cmd: dz run-step minor_report complete
     deps:
@@ -252,8 +268,12 @@ stages:
       size: 74840159695
       nfiles: 6144
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/complete/date_aggregation.parquet
+      md5: 4fa357ab74d29dc27e2f01092696905e
+      size: 17848
   covid_tuesday-minor_report:
     cmd: dz run-step minor_report covid_tuesday
     deps:
@@ -262,8 +282,12 @@ stages:
       size: 136280133
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/covid_tuesday/date_aggregation.parquet
+      md5: 207784c31ebd31796c212bdaed24429a
+      size: 2873
   non_covid_thursday-minor_report:
     cmd: dz run-step minor_report non_covid_thursday
     deps:
@@ -272,8 +296,12 @@ stages:
       size: 116407983
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/non_covid_thursday/date_aggregation.parquet
+      md5: d5566b7d3526337c556935d16d2163ad
+      size: 2873
   covid_full_week-minor_report:
     cmd: dz run-step minor_report covid_full_week
     deps:
@@ -282,8 +310,12 @@ stages:
       size: 903345654
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/covid_full_week/date_aggregation.parquet
+      md5: 8d5d95e68825d77205ee6de5ce7e6a99
+      size: 2997
   covid_sunday-minor_report:
     cmd: dz run-step minor_report covid_sunday
     deps:
@@ -292,8 +324,12 @@ stages:
       size: 112142524
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/covid_sunday/date_aggregation.parquet
+      md5: 2a97be666ba12e97788c19cfded6d358
+      size: 2873
   covid_saturday-minor_report:
     cmd: dz run-step minor_report covid_saturday
     deps:
@@ -302,8 +338,12 @@ stages:
       size: 126729440
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/covid_saturday/date_aggregation.parquet
+      md5: 7d05aa0204e5b9b23de86cf65f12accf
+      size: 2873
   non_covid_tuesday-minor_report:
     cmd: dz run-step minor_report non_covid_tuesday
     deps:
@@ -312,5 +352,9 @@ stages:
       size: 110562601
       nfiles: 256
     - path: src/minor_report.py
-      md5: 8d7518a1417a8964b6bf3ed4ac3cb238
-      size: 876
+      md5: ca7f80f59a7f5d49f0a4452be19a64bd
+      size: 902
+    outs:
+    - path: data/gpsping/minor_report/non_covid_tuesday/date_aggregation.parquet
+      md5: 01bbc7cc06ef6068a3d215d29c5bf05c
+      size: 2873

@@ -27,7 +27,7 @@ def dategroup(_df):
 date_agg_table = dz.ScruTable(DateAggregation)
 
 
-@dz.register(dependencies=[ping_table])
+@dz.register(dependencies=[ping_table], outputs=[date_agg_table])
 def step():
     date_agg_table.replace_all(
         pd.concat(
